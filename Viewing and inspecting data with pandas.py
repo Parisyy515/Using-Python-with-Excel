@@ -4,7 +4,7 @@ from openpyxl.workbook import workbook
 df = pd.read_csv('Names.csv', header=None)
 df.columns = ['First', 'Last', 'Address',
               'City', 'State', 'Area Code', 'Income']
-# read the existing scv file and update its column
+# read the existing csv file and update its column
 
 print(df.columns)
 # print all columns

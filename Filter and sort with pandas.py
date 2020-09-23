@@ -4,7 +4,7 @@ from openpyxl.workbook import workbook
 df = pd.read_csv('Names.csv', header=None)
 df.columns = ['First', 'Last', 'Address',
               'City', 'State', 'Area Code', 'Income']
-# read the existing scv file and update its column
+# read the existing csv file and update its column
 
 
 df['Tax%'] = df['Income'].apply(
@@ -20,7 +20,7 @@ df['Taxs Owed'] = df['Income']*df['Tax%']
 to_drop = ['City', 'State', 'Area Code', ]
 df.drop(columns=to_drop, inplace=True)
 # print(df)
-# list out the column you would like to drop
+# list out the columns you would like to drop
 
 
 df['Test Col'] = False
