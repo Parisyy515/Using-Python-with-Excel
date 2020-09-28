@@ -4,11 +4,13 @@ from openpyxl import load_workbook
 
 wb = Workbook()
 # initiat a new workbook for us to work with
+
 ws = wb.active
-# create a worksheet aactive under the new workbook
+# create a worksheet active under the new workbook
 
 ws1 = wb.create_sheet('Newsheet')
 # use create sheet function on workbook
+
 ws2 = wb.create_sheet('Another', 0)
 # create a new sheet and index as 0
 
@@ -23,12 +25,13 @@ wb2 = load_workbook('regions.xlsx')
 
 new_sheet = wb2.create_sheet('NewSheet')
 # create a new worksheet in wb2
+
 active_sheet = wb2.active
 # grab the active worksheet use active function
 
 cell = active_sheet['A3']
 # create a cell variable and assign it with A3 cell position
-print(cell.value)
+# print(cell.value)
 
 active_sheet['A3'] = 10
 # assign a value to a specific cell

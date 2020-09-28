@@ -1,29 +1,22 @@
 import pandas as pd
 from openpyxl.workbook import workbook
 
-df = pd.read_csv('Names.csv', header=None)
-df.columns = ['First', 'Last', 'Address',
-              'City', 'State', 'Area Code', 'Income']
-# read the existing csv file and update its column
+df_excel = pd.read_excel('regions.xlsx')
+df_csv = pd.read_csv('Names.csv')
+df_txt = pd.read_csv('data.txt')
+# panda can read cvs file or excel file
 
-print(df.columns)
-# print all columns
+df_txt = pd.read_csv('data.txt', delimiter='\t')
+# panda read text file, seperate by '\t'
 
-print(df['First'])
-# print out its first column header being First
+df_csv = pd.read_csv('Names.csv', header=None)
+# outline a header when there is not one
+# in the parenthesis, we need to specify the file directory, include only file name when file is located in working directory)
 
-print(df[['First', 'Last']])
-# print out its two column using double square bracket
+print(df_csv)
+# print out the file for the
 
-print(df['First'][0:2])
-# print out its first column and the first 5 rows of records using slicing
-
-wanted_value = df[['First', 'Last', 'Address']]
-stored = wanted_value.to_excel('First3Column.xlsx')
-# select the first three columns and save it in a new file
-
-
-print(df.loc[df['City'] == 'Riverside'])
-# identify rows on the singular value in the column using data frame location function
-print(df.loc[(df['City'] == 'Riverside') & (df['First'] == 'John')])
-# identify rows on the singular value in the column using data frame location function with mutiple condition
+df_csv.columns = ['First', 'Last', 'Address',
+                  'City', 'State', 'Area Code', 'Income']
+df_csv.to_excel('Modified.xlsx')
+# update the columns header in exsiting csv file and save it into a new excel file

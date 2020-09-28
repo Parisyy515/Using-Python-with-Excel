@@ -16,14 +16,14 @@ print(df[['First', 'Last']])
 # print out its two column using double square bracket
 
 print(df['First'][0:2])
-# print out its first column and the first 5 rows of records using slicing
+# print out its first column and the first 2 rows of records using slicing
 
 wanted_value = df[['First', 'Last', 'Address']]
 stored = wanted_value.to_excel('First3Column.xlsx')
 # select the first three columns and save it in a new file
 
-
 print(df.loc[df['City'] == 'Riverside'])
 # identify rows on the singular value in the column using data frame location function
+
 print(df.loc[(df['City'] == 'Riverside') & (df['First'] == 'John')])
 # identify rows on the singular value in the column using data frame location function with mutiple condition

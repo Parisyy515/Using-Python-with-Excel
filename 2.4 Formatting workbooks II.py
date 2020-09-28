@@ -22,15 +22,14 @@ cell.fill = GradientFill(stop=("000000", "FFFFFF"))
 
 wb.save('test.xlsx')
 
-
 # Named style are objects we can create that store a style so that we can use it multiple times
 highlight = NamedStyle(name='highlight')
 highlight.font = Font(bold=True)
 bd = Side(style='thick', color='000000')
-# create a variable to hold the style of side (thick style with black color)
+
+# create a variable to hold the style of side (thick style with black color), fill the cell with solid yellow color
 highlight.border = Border(left=bd, top=bd, bottom=bd)
 highlight.fill = PatternFill('solid', fgColor='FFFF00')
-# fill the cell with solid yellow color
 
 count = 0
 for col in ws.iter_cols(min_col=8, min_row=1, max_col=30, max_row=30):

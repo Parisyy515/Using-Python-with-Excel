@@ -14,6 +14,7 @@ ws.unmerge_cells('A1:B5')
 
 ws.merge_cells(start_row=2, start_column=2, end_row=5, end_column=5)
 # any merged cell is addressed as their top-left cell, above merge is addressed as B2
+
 cell = ws['B2']
 # assign the whole merged cell as cell
 
